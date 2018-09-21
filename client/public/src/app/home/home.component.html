@@ -1,0 +1,22 @@
+<button class ="btn btn-info shadow rounded" type="button" [routerLink]="['new']">New Restaurant</button>
+<table class="table mt-5 w-75 bg-light mx-auto">
+    <thead>
+        <tr>
+            <th>Restaurant</th>
+            <th>Cuisine</th>
+            <th>Actions available</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let restaurant of restaurants">
+            <td>{{restaurant.name}}</td>
+            <td>{{restaurant.cuisine}}</td>
+            <td>
+                <button class="btn btn-success mr-2" [routerLink]="[restaurant._id]">Read reviews</button>
+                <button class="btn btn-primary mr-2" [routerLink]="[restaurant._id,'edit']">Edit</button>
+                <button *ngIf="restaurant.canDelete" class="btn btn-danger" (click)="deleteOnClick(restaurant._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<router-outlet></router-outlet> 

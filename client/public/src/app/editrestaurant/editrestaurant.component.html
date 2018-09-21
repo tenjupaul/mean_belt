@@ -1,0 +1,15 @@
+<div class="row bg-light shadow rounded w-75 p-3 mx-auto">
+  <h5>Edit a restaurant</h5>
+  <div class="row mt-5 text-left">
+    <form (submit)="editRestaurant(restaurant._id)"> 
+      <p>Restaurant Name: </p>
+      <input type="text" class="form-control" name="restaurant.name" [(ngModel)]="restaurant.name">
+      <span *ngIf="error.name" class="text-danger">{{error.name.message}}</span>
+      <p>Cuisine: </p>
+      <input type="text" class="form-control mb-3" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
+      <span *ngIf="error.cuisine" class="text-danger">{{error.name.message}}</span>
+      <button type="button" class="btn btn-warning shadow rounded mr-2" [routerLink]="['/restaurant']">Cancel</button>
+    <button type="submit" class="btn btn-primary shadow rounded">Edit</button>
+     </form>
+  </div>
+  </div>

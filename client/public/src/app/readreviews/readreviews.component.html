@@ -1,0 +1,18 @@
+<button class ="btn btn-info shadow rounded mb-3" type="button" [routerLink]="['review']">New Review</button>
+<h4>Reviews for {{restaurant}}</h4>
+<table class="table w-75 mx-auto mt-3 bg-light">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Stars</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let review of sortedReview">
+            <td>{{review.name}}</td>
+            <td>{{review.rating}}</td>
+            <td>{{review.review}}</td>
+        </tr>
+    </tbody>
+</table>
